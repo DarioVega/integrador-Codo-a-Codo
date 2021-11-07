@@ -97,7 +97,10 @@
       <div class="formulario">
         <h5 class="text-center mt-1">Venta</h5>
         <h1 class="text-center mb-3">Valor de Ticket $200</h1>
-        <form class="row g-3 needs-validation" novalidate>
+        <form
+          class="row g-3 needs-validation d-flex justify-content-center"
+          novalidate
+        >
           <div class="col-md-4 position-relative w-50">
             <input
               type="text"
@@ -134,29 +137,40 @@
             </div>
           </div>
           <div class="input-group mb-3 w-50">
-            <input type="text" class="form-control" placeholder="Cantidad" />
+            <input
+              type="number"
+              class="form-control"
+              placeholder="Cantidad"
+              id="cantidad"
+            />
           </div>
           <div class="col-md-3 position-relative w-50">
             <select class="form-select" id="validationTooltip04" required>
-              <option>Estudiante</option>
-              <option>Trainee</option>
-              <option>Junior</option>
+              <option id="estudiante" value="estudiante">Estudiante</option>
+              <option id="trainee" value="trainee">Trainee</option>
+              <option id="junior" value="junior">Junior</option>
             </select>
             <div class="invalid-tooltip">
               Por favor, seleccione una opción válida.
             </div>
           </div>
 
-          <div class="row d-flex justify-content-between">
+          <div>
+            <p class="bg-info p-2">Total a pagar: $<span id="total"></span></p>
+          </div>
+
+          <div class="row d-flex justify-content-between p-2 gap-2 mt-2">
             <button class="btn btn-success col" type="button">Borrar</button>
-            <button class="btn btn-success col" type="button">Resumen</button>
+            <button class="btn btn-success col" type="button" id="resumen">
+              Resumen
+            </button>
           </div>
         </form>
       </div>
     </main>
 
     <footer
-      class="d-flex justify-content-between mt-5 align-items-center p-5"
+      class="d-flex justify-content-between mt-3 align-items-center p-5"
       style="height: 20vh; background: darkblue"
     >
       <a href="#" class="link-light">Preguntas frecuentes</a>
